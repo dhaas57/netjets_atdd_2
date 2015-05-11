@@ -11,7 +11,7 @@ Then /^I am shown a summary of a featured article on the dashboard$/ do
   assert @browser.span(:id => "From_today.27s_featured_article").exists?
 end
 
-Then /^I can access the full article from the dashboard$/ do
+Then /^I can access the Wikinews from the dashboard$/ do
   todays_full_article = @browser.link(:xpath => "//div[@id='mp-tfa']//a/b/..")
   assert todays_full_article.exists?
   todays_full_article.click
@@ -27,3 +27,4 @@ end
 And(/^I am shown names of (\d+) recently deceased individuals on the dashboard$/) do |arg1|
   pending # express the regexp above with the code you wish you had
 end
+
