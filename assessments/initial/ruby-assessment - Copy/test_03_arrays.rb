@@ -3,8 +3,8 @@ require 'helper'
 class AboutArrays < Test::Unit::TestCase
   def test_creating_arrays
     empty_array = Array.new
-    assert_equal {"Chris","Rob","Rich","Chad","Steve","Dave"}, empty_array.class
-    assert_equal '6', empty_array.size
+    assert_equal Array, empty_array.class
+    assert_equal 0, empty_array.size
   end
 
   def test_accessing_array_elements

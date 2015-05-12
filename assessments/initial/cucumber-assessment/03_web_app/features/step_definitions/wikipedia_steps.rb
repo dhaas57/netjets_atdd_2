@@ -28,3 +28,7 @@ And(/^I am shown names of (\d+) recently deceased individuals on the dashboard$/
   pending # express the regexp above with the code you wish you had
 end
 
+I can access the full article from the dashboard
+I can access more historical events for <day> from the dashboard
+I can access Wikinews from the dashboard
+I am shown an ordered timeline of historical events for the current date on the dashboard

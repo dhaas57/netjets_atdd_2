@@ -28,3 +28,15 @@ And(/^I am shown names of (\d+) recently deceased individuals on the dashboard$/
   pending # express the regexp above with the code you wish you had
 end
 
+And /^I can access Wikinews from the dashboard$/ do
+  pending
+end
+
+Then /^I am shown an ordered timeline of historical events for the current date on the dashboard$/ do
+  pending
+end
+
+Then /^I can access more historical events for (.*) from the dashboard$/ do |day|
+  pending
+end
+
