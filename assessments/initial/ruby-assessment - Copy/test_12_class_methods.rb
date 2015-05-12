@@ -9,7 +9,7 @@ class AboutClassMethods < Test::Unit::TestCase
       :instance_level_wag
     end
     
-    def self.wag
+    def Dog2.wag
     	:class_level_wag
     end
   end
