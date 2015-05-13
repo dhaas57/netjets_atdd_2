@@ -1,7 +1,7 @@
 # product_locator.feature
 
 When(/^searching for no selected product criteria$/) do
-   goto Chads Web Site
+  goto_Chads_Web_Site
    donot select any search criteria
 end
 
@@ -11,14 +11,14 @@ end
 
 
 When(/^searching on one product criteria$/) do
-  goto Chads Web Site
+  goto_Chads_Web_Site
   open the advanced search screen
   select one search criteria from list of choices
   select the submit button
 end
 
 When(/^searching on two product criteria$/) do
-  goto Chads Web Site
+  goto_Chads_Web_Site
   open the advanced search screen
   select two search criteria from list of choices
   select the submit button
@@ -27,7 +27,7 @@ end
 
 
 When(/^searching on many product criteria$/) do
-  goto Chads Web Site
+  goto_Chads_Web_Site
   open the advanced search screen
   select many of the search criteria from list of choices
   select the product submit button
@@ -42,7 +42,7 @@ end
 
 
 When(/^searching for no selected contractor criteria$/) do
-  goto Chads Web Site
+  goto_Chads_Web_Site
   open the contractor search page
   donot select any contractor criteria
 end
@@ -52,7 +52,7 @@ Then(/^The contractor submit button is not enabled$/) do
 end
 
 When(/^searching on one contractor criteria$/) do
-  goto Chads Web Site
+  goto_Chads_Web_Site
   open the contractor search page
   select one contractor criteria
   select the contractor submit button
@@ -60,14 +60,14 @@ end
 
 
 When(/^searching on two contractor criteria$/) do
-   goto Chads Web Site
+   ggoto_Chads_Web_Site
    open the contractor search page
    select two contractor criteria
    select the contractor submit buttonn
 end
 
 When(/^searching on many contractor criteria$/) do
-   goto Chads Web Site
+   goto_Chads_Web_Site
    open the contractor search page
    select many contractor criteria
    select the contractor submit button
@@ -82,7 +82,7 @@ end
 # store_locator.feature
 
 Given(/^a product is selected$/) do
-   goto Chads Web Site
+   goto_Chads_Web_Site
    need to search   select a product
 end
 
@@ -117,7 +117,7 @@ end
 
 
 When(/^A rating is selected$/) do
-   goto Chads Web Site
+   goto_Chads_Web_Site
    need a product
    select a rating on a product
 end
@@ -129,7 +129,7 @@ end
 
 
 When(/^one product is selected$/) do
-  goto Chads Web Site
+  goto_Chads_Web_Site
   need a product
   select one product from list
 end
