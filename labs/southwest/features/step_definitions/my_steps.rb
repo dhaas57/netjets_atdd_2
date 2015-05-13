@@ -1,6 +1,4 @@
-require 'page-object'
 
-include PageObject::PageFactory
 
 When(/^I search for flights between 2 airports for a specific day$/) do
   goto_southwest_app

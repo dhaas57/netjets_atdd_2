@@ -1,4 +1,3 @@
-require 'watir-webdriver'
 require 'page-object'
 require 'locale'
 require 'test/unit'

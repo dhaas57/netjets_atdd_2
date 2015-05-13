@@ -1,3 +1,7 @@
+require 'page-object'
+
+include PageObject::PageFactory
+
 module SouthwestInteractions
 
   def search_for_flights_between_valid_airports

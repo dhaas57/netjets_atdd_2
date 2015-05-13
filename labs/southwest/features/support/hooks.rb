@@ -2,7 +2,6 @@ require 'cucumber'
 require 'watir-webdriver'
 
 
-
 Before do
     begin
       @browser = Watir::Browser.new :chrome
