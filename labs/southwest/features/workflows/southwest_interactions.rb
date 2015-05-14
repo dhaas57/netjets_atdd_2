@@ -25,6 +25,7 @@ def search_for_flights_between_same_airport
   [departure, departure]
 
 end
+
   def goto_southwest_app
     visit SouthwestHome
   end

@@ -1,80 +1,102 @@
 # product_locator.feature
 
 When(/^searching for no selected product criteria$/) do
-  goto_Chads_Web_Site
-   donot select any search criteria
+  # goto_Chads_Web_Site
+  @prod_sub = try_to_search_without_any_product_criteria
 end
 
 Then(/^The product submit button is not enabled$/) do
-  i need to make sure the submit button isnot enabled
+  expect(@prod_sub).to be_false
 end
 
 
 When(/^searching on one product criteria$/) do
-  goto_Chads_Web_Site
-  open the advanced search screen
-  select one search criteria from list of choices
-  select the submit button
+  #goto_Chads_Web_Site
+  @product_list= search_with_one_product_criteria
 end
 
 When(/^searching on two product criteria$/) do
   goto_Chads_Web_Site
-  open the advanced search screen
-  select two search criteria from list of choices
-  select the submit button
+  @product_list = search_with_two_product_criteria
 end
-
-
 
 When(/^searching on many product criteria$/) do
   goto_Chads_Web_Site
-  open the advanced search screen
-  select many of the search criteria from list of choices
-  select the product submit button
+  search_with_many_product_criteria
 end
+
 
 Then(/^a list of products is displayed based on the search criteria$/) do
-    a list of products is displayed
-end
+  expect(@product_list).not_to  be_empty
+  @product_list.each { |x| expect(x.type).to eq 'lawn mower'}
 
+
+end
 #...............................................................................
 # contractor_locator.feature
 
 
 When(/^searching for no selected contractor criteria$/) do
   goto_Chads_Web_Site
-  open the contractor search page
-  donot select any contractor criteria
+  try_to_search_without_any_contractor_criteria
+end
+
+
+def try_to_search_without_any_contractor_criteria
+  #TODO need to find a product
+  #TODO goto the contractor search screen
+  #TODO do not add any search criteria
 end
 
 Then(/^The contractor submit button is not enabled$/) do
-  make sure contractor submit button isnot enabled
+  expect(able_to_perform_contractor_search?).to be_false
 end
+
+
+
 
 When(/^searching on one contractor criteria$/) do
   goto_Chads_Web_Site
-  open the contractor search page
-  select one contractor criteria
-  select the contractor submit button
+  search_with_one_contractor_criteria
 end
 
 
 When(/^searching on two contractor criteria$/) do
-   ggoto_Chads_Web_Site
-   open the contractor search page
-   select two contractor criteria
-   select the contractor submit buttonn
+   goto_Chads_Web_Site
+   search_with_two_contractor_criteria
 end
 
 When(/^searching on many contractor criteria$/) do
    goto_Chads_Web_Site
-   open the contractor search page
-   select many contractor criteria
-   select the contractor submit button
+   search_with_many_contractor_criteria
 end
 
+def search_with_one_contractor_criteria
+  #TODO need a product
+  #TODO Open the contractor search page
+  #TODO Input one search criteria
+  #TODO Select the submit button
+end
+
+def search_with_two_contractor_criteria
+  #TODO need a product
+  #TODO Open the contractor search page
+  #TODO Input two search criteria
+  #TODO Select the submit button
+end
+
+def search_with_many_contractor_criteria
+  #TODO need a product
+  #TODO Open the contractor search page
+  #TODO Input many search criteria
+  #TODO Select the submit button
+end
+
+
+
+
 Then(/^a list of contractors is displayed based on the search criteria$/) do
-   make sure contractor data is returned
+  expect(returned_contractor_search?).to be_true
 end
 
 
@@ -83,33 +105,47 @@ end
 
 Given(/^a product is selected$/) do
    goto_Chads_Web_Site
-   need to search   select a product
+   search_with_one_product_criteria
 end
 
 When(/^searching on one store criteria$/) do
-   select a product from the queue
-   select the store button on that product
-   select one store search criteria
-   select the store submit button
+  search_with_one_store_criteria
 end
 
 
 When(/^searching on two store criteria$/) do
-   select a product from the queue
-   select the store button on that product
-   select two store criteria
-   select the store submit button
+   search_with_two_store_criteria
 end
 
 When(/^searching on many store criteria$/) do
-   select a product from the queue
-   select the store button on that product
-   select two store criteria
-   select the store submit button
+  search_with_many_store_criteria
 end
 
+def search_with_one_store_criteria
+  #TODO need a product
+  #TODO Open the store search page
+  #TODO Input one search criteria
+  #TODO Select the submit button
+end
+
+def search_with_two_store_criteria
+  #TODO need a product
+  #TODO Open the store search page
+  #TODO Input one search criteria
+  #TODO Select the submit button
+end
+
+def search_with_many_store_criteria
+  #TODO need a product
+  #TODO Open the store search page
+  #TODO Input one search criteria
+  #TODO Select the submit button
+end
+
+
+
 Then(/^a list of stores is displayed based on search criteria$/) do
-  make sure a list of stores is listed
+  expect(returned_store_search?).to be_true
 end
 
 #...............................................................................
@@ -118,12 +154,12 @@ end
 
 When(/^A rating is selected$/) do
    goto_Chads_Web_Site
-   need a product
-   select a rating on a product
+   search_with_one_product_criteria
+   try_to_search_without_any_contractor_criteria
 end
 
 Then(/^only reviews based on the rating is displayed$/) do
-   did a list of reviews display
+  expect(returned_rating_search?).to be_true
 end
 
 
@@ -135,5 +171,5 @@ When(/^one product is selected$/) do
 end
 
 Then(/^that product review is displayed$/) do
-  make sure a product review is listed
+  expect(returned_rating_search?).to be_true
 end
