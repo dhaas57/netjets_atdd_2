@@ -1,5 +1,7 @@
 task :asdf do
-  puts "this is a task"
+
+  puts "This is a task"
+
 end
 
 require 'cucumber/rake/task'
@@ -11,6 +13,7 @@ end
 
 task :compile do
   puts 'compiling'
+
 end
 
 task :test do
@@ -18,3 +21,4 @@ task :test do
 end
 
 task :build => [:compile, :test]
+

@@ -6,9 +6,9 @@ Feature: Addition
 
   Scenario: Add several numbers
     Given I have entered 4 into the calculator
-    When I have entered 17 into the calculator
+    And I have entered 17 into the calculator
     And I have entered 6 into the calculator
-    And I press add
+    When I press add
     Then the result should be 27 on the screen
 
   Scenario Outline: Addition properties
