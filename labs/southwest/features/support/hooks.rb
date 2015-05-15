@@ -9,3 +9,7 @@ Before do
       warn e
     end
 end
+
+After do
+  @browser.close
+end

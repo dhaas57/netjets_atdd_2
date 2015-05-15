@@ -33,7 +33,6 @@ module HomeImprovementInteractions
 
 
 
-
   def search_with_two_product_criteria
     on(ChadsHomePage).advanced_search
 
@@ -54,13 +53,6 @@ module HomeImprovementInteractions
 
 
 
-
-
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-
-
-end
 
 World(HomeImprovementInteractions)
